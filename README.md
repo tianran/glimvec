@@ -25,7 +25,7 @@ To reproduce results in the ACL2018 [paper](https://arxiv.org/abs/1805.09547):
 
 You can either use a python module, or compile a stand alone executable for training.
 
-### Using the pre-built python module:
+### Use the pre-built python module:
 
 We have included pre-built binary python modules for several operating systems. If the versions feel right, this is the easiest way to start training.
 
