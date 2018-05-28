@@ -1,0 +1,34 @@
+OBJECTS=\
+	RandomGenerator.obj \
+	Poisson.obj \
+	misc.obj \
+	TrainerKB.obj \
+
+
+EXOBJECTS=\
+	ReaderLines.obj \
+	MultinomialTable.obj \
+
+
+
+EIGEN=eigen-git-mirror
+SRC=..\cpp
+
+PYTHON3_LIB=C:\Users\robin\Anaconda3\libs\python36.lib
+PYTHON3_INCLUDE=C:\Users\robin\Anaconda3\include
+
+CC=cl
+CFLAGS=/EHsc /O2 /I$(EIGEN) /I$(SRC)
+
+all: trainKB.exe
+
+%.obj: $(SRC)\%.cpp $(SRC)\%.h
+	$(CC) /c $(CFLAGS) $<
+
+%.exe: $(SRC)\%.cpp $(OBJECTS) $(EXOBJECTS)
+	$(CC) $(CFLAGS) $< /link $(OBJECTS) $(EXOBJECTS)
+
+%.pyd: $(SRC)\%.cpp $(OBJECTS)
+	$(CC) /LD /I$(PYTHON3_INCLUDE) $(CFLAGS) $< $(PYTHON3_LIB) /link $(OBJECTS) /OUT:$@
+
+.SECONDARY: $(OBJECTS) $(EXOBJECTS)

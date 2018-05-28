@@ -1,0 +1,14 @@
+usa	424.0
+uk	380.0
+ussr	262.0
+netherlands	260.0
+india	250.0
+poland	234.0
+egypt	223.0
+brazil	205.0
+israel	191.0
+china	189.0
+cuba	176.0
+indonesia	162.0
+jordan	123.0
+burma	105.0
