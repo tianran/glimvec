@@ -11,9 +11,13 @@ Paper: [Interpretable and Compositional Relation Learning by Joint Training with
     * For re-compiling the Python module: CPython(>=3.5)
     * For compiling in Windows: [Visual Studio Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools)
 
+## Detailed Performance on Benchmark Datasets
+
+TBW
+
 ## Usage for Evaluation:
 
-Reproduce ACL2018 results:
+To reproduce results in the ACL2018 [paper](https://arxiv.org/abs/1805.09547):
 
     $ for dataset in {wn18,fb15k,wn18rr,fb15k-237}; do echo ${dataset}; for setting in {joint,base,jointcomp,basecomp}; do echo " model-${setting}"; python python/evaluate.py data/${dataset} acl2018/${dataset}/model-${setting}; done; done
 
@@ -107,7 +111,7 @@ Then, depending on your OS, run the following:
 
     `$ C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat x64`
 
-Now make:
+Now compile:
 
     $ cd build
     $ make
@@ -151,6 +155,3 @@ If the pre-built python modules do not work, and you have succeeded in compiling
     `$ cd build; make glimvec.pyd; cd ..`
 
 You may want to change `PYTHON3_LIB`, `PYTHON3_LIB_PATH` and `PYTHON3_INCLUDE` in the Makefile for successful compiling.
-
-## Detailed Performance on Benchmark Datasets
-
