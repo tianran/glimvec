@@ -19,7 +19,7 @@ TBW
 
 To reproduce results in the ACL2018 [paper](https://arxiv.org/abs/1805.09547):
 
-    $ for dataset in {wn18,fb15k,wn18rr,fb15k-237}; do echo ${dataset}; for setting in {joint,base,jointcomp,basecomp}; do echo " model-${setting}"; python python/evaluate.py data/${dataset} acl2018/${dataset}/model-${setting}; done; done
+    $ for dataset in {wn18,fb15k,wn18rr,fb15k-237}; do echo ${dataset}; for setting in {joint,base,jointcomp,basecomp}; do echo " model-${setting}"; python python/evaluate.py --split test data/${dataset} acl2018/${dataset}/model-${setting}; done; done
 
 ## Usage for Training:
 
