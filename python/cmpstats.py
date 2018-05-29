@@ -16,7 +16,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('model_dir', nargs='+')
     parser.add_argument(
-        '--split', default='test', help='test (default) or valid')
+        '--split', default='valid', help='test or valid (default)')
     args = parser.parse_args()
 
     if len(args.model_dir) < 1:
