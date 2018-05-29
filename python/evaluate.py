@@ -234,7 +234,7 @@ def main():
     parser.add_argument('--vocab-entity')
     parser.add_argument('--vocab-relation')
     parser.add_argument(
-        '--split', default='test', help='test (default) or valid')
+        '--split', default='valid', help='test or valid (default)')
     parser.add_argument('-v', '--verbose', action='store_true')
     args = parser.parse_args()
 
