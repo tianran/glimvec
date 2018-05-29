@@ -41,42 +41,14 @@ We have included pre-built binary python modules for several operating systems. 
 
     `$ copy pre-built\windows\glimvec.pyd python`
 
-Then, run the python training script and show help:
-
-    $ python python/trainKB.py -h
-    usage: trainKB.py [-h] [--sampPow SAMPPOW] [--sampPathLen SAMPPATHLEN]
-              [--numBatches NUMBATCHES] [--inPath INPATH]
-              [--outPath OUTPATH] [--para PARA]
-              [--glimvecModule GLIMVECMODULE]
-              VOCAB_ENTITY VOCAB_RELATION TRAIN_FILE
-
-    Train model for KB.
-
-    positional arguments:
-      VOCAB_ENTITY          counts of entities
-      VOCAB_RELATION        counts of relations
-      TRAIN_FILE            train file
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      --sampPow SAMPPOW     sampling nodes by probabilities proportional to the
-                power of frequency. (default: 0.75)
-      --sampPathLen SAMPPATHLEN
-                path length is 1+Poisson(sampPathLen) (default: 0.5)
-      --numBatches NUMBATCHES
-                batches to train (default: 1000000)
-      --inPath INPATH       if set, load model from this path for init
-      --outPath OUTPATH     save model to this path (default: working dir)
-      --para PARA           number of parallel threads (default: 2)
-      --glimvecModule GLIMVECMODULE
-                path to the pre-trained python library (default: None)
+Then, run the python training script `python/trainKB.py`.
 
 Example for training on the `nations` dataset:
 
     $ mkdir -p model/nations
     $ python python/trainKB.py --numBatches 1000 --outPath model/nations/ data/nations/vocab_entity.txt data/nations/vocab_relation.txt data/nations/train.txt
 
-Trained model is stored under `model/nations` directory:
+Trained model is stored under the `model/nations` directory:
 
     $ ls model/nations
     cvecs.npy  decoder.npy  dstep.npy  encoder.npy  mats.npy  msteps.npy  params.json  tvecs.npy  vsteps.npy
@@ -117,25 +89,7 @@ Now compile:
     $ make
     $ cd ..
 
-This will produce an executable `trainKB`. Run the following to show help:
-
-    $ build/trainKB --help
-    Train model for KB.
-      trainKB [OPTION...] VOCAB_ENTITY VOCAB_RELATION TRAIN_FILE
-
-    positional arguments:
-      VOCAB_ENTITY      counts of entities
-      VOCAB_RELATION    counts of relations
-      TRAIN_FILE        train file
-
-    optional arguments:
-      -h, --help        show this help message and exit
-      --sampPow         samp. node prob. is power of freq. (default: 0.75)
-      --sampPathLen     path length is 1+Poisson(sampPathLen) (default: 0.5)
-      --numBatches      batches to train (default: 1000000)
-      --inPath          if set, load model from this path for init
-      --outPath         save model to this path (default: working dir)
-      --para            number of parallel threads (default: 2)
+This will produce an executable `trainKB`.
 
 Example for training on the `nations` dataset:
 
