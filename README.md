@@ -9,7 +9,7 @@ Paper: [Interpretable and Compositional Relation Learning by Joint Training with
 * General: Python3
 * For compiling the trainer from source: c++, make
     * For re-compiling the Python module: CPython(>=3.5)
-    * For compiling in Windows: [Visual Studio Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools)
+    * For compiling in Windows: [Build Tools for Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 
 ## Detailed Performance on Benchmark Datasets
 
